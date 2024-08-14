@@ -9,9 +9,9 @@ Production tested! This is the system I use in my own game, [Code Zodiac](https:
 1. Add this code to your `addons/` folder
 1. Go to `Project > Project Settings > Plugins` to enable the plugin
 1. Open your NPC scene and add a `UtilityTaskManager` node just below the root
-1. (Optional) Create a specialized `npc_task.gd` script with a `NPCTask` class that extends from `UtilityTask`. See `example_task.gd` for details.
+1. (Optional) Create a specialized `npc_task.gd` script with a `NPCTask` class that extends from `UtilityTask`. See `example.task.gd` for details.
 1. Create a `some_action.task.gd` script that extends from `NPCTask`. See `example.task.gd` for details.
-1. Drag `some_action_task.gd` to the `UtilityTaskManager` array of `utility_task_scripts`
+1. Drag `some_action.task.gd` to the `UtilityTaskManager` array of `utility_task_scripts`
 
 ### UtilityTask
 
