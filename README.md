@@ -1,4 +1,4 @@
-# Utility AI
+# Utility AI 🤖💭
 
 A decision-making 'brain' for video game characters, powered by utility scores.
 
