@@ -2,6 +2,8 @@
 
 A decision-making 'brain' for video game characters, powered by utility scores.
 
+Production tested! This is the system I use in my own game, [Code Zodiac](https://store.steampowered.com/app/2403880/Code_Zodiac/)
+
 ### How to Use
 
 1. Add this code to your `addons/` folder
