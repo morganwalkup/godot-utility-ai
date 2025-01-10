@@ -93,6 +93,14 @@ func _physics_process(delta):
 	if (active_task && active_task.has_method("_physics_process")):
 		active_task._physics_process(delta)
 
+func _input(event: InputEvent) -> void:
+	if (active_task && active_task.has_method("_input")):
+		active_task._input(event)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if (active_task && active_task.has_method("_unhandled_input")):
+		active_task._unhandled_input(event)
+
 func interrupt(task_name):
 	var new_task = null
 	for task in utility_tasks:
