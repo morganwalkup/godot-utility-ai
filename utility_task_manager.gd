@@ -13,8 +13,8 @@ var previous_task: UtilityTask
 var active_task: UtilityTask
 # How frequently we choose a task to perform
 @export var decision_frequency_ms: float = 500.0
-# Timer that triggers decisions
-var _decision_timer: Timer
+# Timer that triggers decisions (Timer or ProcessTimer)
+var _decision_timer: Node
 # If true, decisions will be made every frame instead of using decision_frequency_ms
 @export var replace_timer_with_process: bool = false
 # True if an interrupt has been triggered but the new task hasn't been started yet
@@ -23,7 +23,8 @@ var pending_interrupt: bool = false
 @onready var npc_node: Node = get_parent()
 
 # A psuedo-timer that times out every frame
-class ProcessTimer extends Timer:
+class ProcessTimer extends Node:
+	signal timeout
 	var _stopped = true
 	func start(_time_sec = -1.0):
 		_stopped = false
@@ -32,7 +33,7 @@ class ProcessTimer extends Timer:
 	func is_stopped():
 		return _stopped
 	func _process(_delta):
-		if !_stopped: emit_signal("timeout")
+		if !_stopped: timeout.emit()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
